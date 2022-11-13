@@ -9,6 +9,9 @@ using std::cout;
    this is because we inherited from a class which has a constructot
 5. Now we should create a constructor for the child class 
 6.  while creating a constructor for child class we can inherit the properties from the constructor of parent class
+7. We cannot access private properties in child class from the parent class, so we use protected 
+8. We cannot access methods from parent class directly as the inheritence is private by default see line highlited as no. 8
+9. We should make it public to run the method of the parent class
 */
 
 class AbstractEmployee{
@@ -16,7 +19,7 @@ class AbstractEmployee{
                                         
 };
 
-class Employee:AbstractEmployee {          
+class Employee:AbstractEmployee {              
  
 public:  
     string Name;        
@@ -44,7 +47,8 @@ public:
     }
 };       
 
-class Developer: Employee{          // developer is child and employee is parent
+class Developer:public Employee{           // line 8.and 9.
+ // developer is child and employee is parent
     public:
         string favProgramminLang;
    // line 4. and 5.
@@ -59,10 +63,30 @@ class Developer: Employee{          // developer is child and employee is parent
 
 };
 
+class Teacher:public Employee{           // line 8.and 9.
+ // developer is child and employee is parent
+    public:
+        string Subject;
+   // line 4. and 5.
+        Teacher(string name, string company, int age, string subject):Employee(name,company,age){ // here we need not to add the previous added properties
+            Subject = subject;
+         }   
+
+         void PrepareLesson(){                     //creating a method in child class
+            cout << Name << " is preparing " << Subject << " leson " << std::endl;
+         }
+
+
+};
+
 int main()
 {
     int number; 
     Developer d = Developer("Tejas","ARAI",25,"python");
     d.FixBug();
+    d.AskForPromotion();
+    Teacher t = Teacher("Bob","cool school",35,"History");
+    t.PrepareLesson();
+    t.AskForPromotion();
 
 }
