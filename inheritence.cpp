@@ -2,7 +2,13 @@
 using std::string; 
 using std::cout;
 
-
+/*1. child class or sub class inherits all properties from the super class or parant class or base class 
+2.The child also has its own distinct properties
+3. cars - electric car, engine car etc.
+4. if we try to create object of the child class here developer directly it gives error that it does not have a defaul constructor
+   this is because we inherited from a class which has a constructot
+5. Now we should create a constructor for the child class 
+*/
 
 class AbstractEmployee{
     virtual void AskForPromotion()=0;   
@@ -58,12 +64,19 @@ public:
     }
 };       
 
+class Developer: Employee{          // developer is child and employee is parent
+    public:
+        string favProgramminLang;
+    
+
+};
+
 int main()
 {
     int number; 
     Employee employee1 = Employee("Tejas", "ARAI", 23);         
     Employee employee2 = Employee("John", "Mahindra",35); 
-  
+
     employee1.AskForPromotion();  
     employee2.AskForPromotion();
 }
