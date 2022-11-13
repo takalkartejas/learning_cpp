@@ -20,3 +20,4 @@
 
 
 ### usefull commands:
+1. using std::sting :- to avoid typing std evertime before string 
