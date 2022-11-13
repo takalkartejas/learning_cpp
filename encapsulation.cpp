@@ -19,6 +19,18 @@ public:
     string getName(){                        // getter will return the name
         return Name;
     }
+    void setCompany(string company) {               
+        Company = company;   
+    }
+    string getCompany(){                        
+        return Company;
+    }
+    void setAge(int age) {               
+        Age = age;   
+    }
+    int getAge(){                        
+        return Age;
+    }
 
     void IntroduceYourself(){                          
         std::cout << "Name " << Name <<std::endl;
