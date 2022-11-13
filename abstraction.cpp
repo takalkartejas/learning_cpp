@@ -12,9 +12,8 @@ using std::cout;
 
 
 class AbstractEmployee{
-    virual void AskForPromotion() = 0;   // this funcion is a virtual function, this means that other class has to provide functionality for it
+    virtual void AskForPromotion()=0;   // this funcion is a virtual function, this means that other class has to provide functionality for it
                                         // above mentioned reson makes this class and abstract class
-
 };
 
 class Employee:AbstractEmployee {          //here the class Employee has signed the contract, 
@@ -25,7 +24,13 @@ private:
     int Age;
 
 public:               
+    void AskForPromotion(){                 // we implemented the method as per contract
 
+        if(Age>30)
+            cout<< Name << " got promoted!" << std::endl;
+        else
+            cout<< Name << " did not get promoted" << std::endl;
+    }
     void setName(string name) {               
         Name = name;   
     }
@@ -40,9 +45,9 @@ public:
     }
     void setAge(int age) {   
         if (age>=18)             
-        Age = age ;  
+            Age = age ;  
         else
-        cout << "less than 18 not allowed" << std::endl;
+            cout << "less than 18 not allowed" << std::endl;
     }
     int getAge(){                        
         return Age;
@@ -65,7 +70,8 @@ int main()
 {
     int number; 
     Employee employee1 = Employee("Tejas", "ARAI", 23);         
-
-    Employee employee2 = Employee("John", "Mahindra",23); 
+    Employee employee2 = Employee("John", "Mahindra",35); 
   
+    employee1.AskForPromotion();  //we tested the method
+    employee2.AskForPromotion();
 }
