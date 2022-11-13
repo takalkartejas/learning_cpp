@@ -1,12 +1,19 @@
 #include <iostream>
 using std::string; 
 
+/* 1. encapsulation - to prevent anyone or anything(other classes) outside the class to directly modify our data
+2. We provide very specific methods to allow modification of our data -getters and setters
+3. This methods should be public
+*/
 
-class Employee {  
-public:              
-    string Name;    
+class Employee { 
+private: 
+    string Name;        //we made the data private
     string Company;  
     int Age;
+
+public:              
+
 
     void IntroduceYourself(){                          
         std::cout << "Name " << Name <<std::endl;
