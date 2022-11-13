@@ -54,4 +54,7 @@ int main()
     Employee employee2 = Employee("John", "Mahindra",23);
     employee1.IntroduceYourself(); 
 
+    employee1.setAge(39);
+    std::cout << employee1.getName() << " is " << employee1.getAge() << " year old";  //lets check the age
+
 }
