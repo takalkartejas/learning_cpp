@@ -1,8 +1,9 @@
 #include <iostream>
+using std::string; // to avoid need of std::string everytime
 
 class Employee {
-    std::string Name; 
-    std::string Company;  // we need to std::string everytime here
+    string Name; 
+    string Company;  
 
 
 };       // semi colon is essential
