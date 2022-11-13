@@ -8,6 +8,7 @@ using std::cout;
 4. if we try to create object of the child class here developer directly it gives error that it does not have a defaul constructor
    this is because we inherited from a class which has a constructot
 5. Now we should create a constructor for the child class 
+6.  while creating a constructor for child class we can inherit the properties from the constructor of parent class
 */
 
 class AbstractEmployee{
@@ -16,12 +17,12 @@ class AbstractEmployee{
 };
 
 class Employee:AbstractEmployee {          
-private: 
+ 
+public:  
     string Name;        
     string Company;  
     int Age;
 
-public:               
     void AskForPromotion(){                 
 
         if(Age>30)
@@ -46,16 +47,16 @@ public:
 class Developer: Employee{          // developer is child and employee is parent
     public:
         string favProgramminLang;
-    
+   // line 4. and 5.
+   Developer(string name, string company, int age, string favlang):Employee(name,company,age){ // here we need not to add the previous added properties
+    favProgramminLang = favlang;
+   }   
 
 };
 
 int main()
 {
     int number; 
-    Employee employee1 = Employee("Tejas", "ARAI", 23);         
-    Employee employee2 = Employee("John", "Mahindra",35); 
+    Developer d = Developer("Tejas","ARAI",25,"python");
 
-    employee1.AskForPromotion();  
-    employee2.AskForPromotion();
 }
