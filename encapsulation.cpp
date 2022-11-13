@@ -1,9 +1,10 @@
 #include <iostream>
 using std::string; 
-
+using std::cout;
 /* 1. encapsulation - to prevent anyone or anything(other classes) outside the class to directly modify our data
 2. We provide very specific methods to allow modification of our data -getters and setters
 3. This methods should be public
+4. We can add a validation rule to the setter to avoid wrong modification of our data
 */
 
 class Employee { 
@@ -25,8 +26,11 @@ public:
     string getCompany(){                        
         return Company;
     }
-    void setAge(int age) {               
-        Age = age;   
+    void setAge(int age) {   
+        if (age>=18)             //We can add a validation rule to the setter to avoid wrong modification of our data
+        Age = age ;  
+        else
+        cout << "less than 18 not allowed" << std::endl;
     }
     int getAge(){                        
         return Age;
@@ -54,7 +58,7 @@ int main()
     Employee employee2 = Employee("John", "Mahindra",23);
     employee1.IntroduceYourself(); 
 
-    employee1.setAge(39);
+    employee1.setAge(17);
     std::cout << employee1.getName() << " is " << employee1.getAge() << " year old";  //lets check the age
 
 }
