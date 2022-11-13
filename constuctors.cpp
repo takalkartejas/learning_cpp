@@ -14,7 +14,8 @@ This is a doing of default constructor
 3. Rules for creating a constructor - i) constructor does not have a return type
     ii) constructor has same name as class
     iii) constructor must be public
-4. when we create a constructor we lose the default constructor
+4. when we create a constructor we lose the default constructor, 
+   we cannot create object like we use to it will give error that we do not have a default constructor
 
 */
 
@@ -41,14 +42,14 @@ public:
 int main()
 {
     int number; 
-    Employee employee1;         //the error is due to removal of default constructor
+    Employee employee1 = Employee("Tejas", "ARAI", 23);       // we can create the object in one line using constructor
                                     //As you can see the creation of the two employee objects which are commented out requires much time to write
     // employee1.Age = 25;    
     // employee1.Company = "ARAI" ; 
     // employee1.Name = "Tejas";
     employee1.IntroduceYourself();  
 
-    Employee employee2;  
+    Employee employee2 = Employee("John", "Mahindra",23);
     // employee1.Age = 23;    
     // employee1.Company = "Mahindra" ; 
     // employee1.Name = "John";
