@@ -48,6 +48,12 @@ class Developer:public Employee{
  
     public:
         string favProgramminLang;
+
+        void Work(){
+
+            cout<< Name<<" is programming " << std::endl;  //created a work method for developer
+         }
+
         Developer(string name, string company, int age, string favlang):Employee(name,company,age){ 
          }   
 
@@ -62,6 +68,10 @@ class Teacher:public Employee{
  
     public:
         string Subject;
+
+        void Work(){
+            cout<< Name<<" is teaching " << std::endl;  //created a work method for teacher
+        }
  
         Teacher(string name, string company, int age, string subject):Employee(name,company,age){ 
             Subject = subject;
@@ -70,6 +80,8 @@ class Teacher:public Employee{
          void PrepareLesson(){                     
             cout << Name << " is preparing " << Subject << " leson " << std::endl;
          }
+
+
 
 
 };
