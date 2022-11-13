@@ -5,16 +5,27 @@ using std::cout;
 /* 1. abstraction - hiding complex things so that their front end looks simple
 2. for eg. - smartphone capturing picture with one button - the complexity is hidden from you
 3. some other company has to sign the contract to hide the complex side and provide with the functionality
+4. Abstract classes - the class which makes others do the complex work
+5. The class that sign the contract will provide the functionality
 
 */
 
-class Employee { 
+
+class AbstractEmployee{
+    virual void AskForPromotion() = 0;   // this funcion is a virtual function, this means that other class has to provide functionality for it
+                                        // above mentioned reson makes this class and abstract class
+
+};
+
+class Employee:AbstractEmployee {          //here the class Employee has signed the contract, 
+                                          //The class that sign the contract will provide the functionality
 private: 
     string Name;        
     string Company;  
     int Age;
 
 public:               
+
     void setName(string name) {               
         Name = name;   
     }
@@ -28,7 +39,7 @@ public:
         return Company;
     }
     void setAge(int age) {   
-        if (age>=18)             /
+        if (age>=18)             
         Age = age ;  
         else
         cout << "less than 18 not allowed" << std::endl;
@@ -53,13 +64,8 @@ public:
 int main()
 {
     int number; 
-    Employee employee1 = Employee("Tejas", "ARAI", 23);       
-    employee1.IntroduceYourself();  
+    Employee employee1 = Employee("Tejas", "ARAI", 23);         
 
-    Employee employee2 = Employee("John", "Mahindra",23);
-    employee1.IntroduceYourself(); 
-
-    employee1.setAge(17);
-    std::cout << employee1.getName() << " is " << employee1.getAge() << " year old";  
-
+    Employee employee2 = Employee("John", "Mahindra",23); 
+  
 }
