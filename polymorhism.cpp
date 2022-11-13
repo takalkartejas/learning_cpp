@@ -2,7 +2,8 @@
 using std::string; 
 using std::cout;
 
-/*
+/* 1. polymorphism - ability of object or method to represent multiple forms. in programing 
+2.
 */
 
 class AbstractEmployee{
@@ -16,6 +17,11 @@ public:
     string Name;        
     string Company;  
     int Age;
+
+    void Work(){
+
+        cout<< Name<<" is checking email, performing tasks " << std::endl;  //created a work method 
+    }
 
     void AskForPromotion(){                 
 
@@ -72,10 +78,9 @@ int main()
 {
     int number; 
     Developer d = Developer("Tejas","ARAI",25,"python");
-    d.FixBug();
-    d.AskForPromotion();
     Teacher t = Teacher("Bob","cool school",35,"History");
-    t.PrepareLesson();
-    t.AskForPromotion();
+    t.Work();
+    d.Work();
+
 
 }
