@@ -12,8 +12,13 @@ private:
     string Company;  
     int Age;
 
-public:              
-
+public:               
+    void setName(string name) {               // setter to set the value of Name
+        Name = name;   
+    }
+    string getName(){                        // getter will return the name
+        return Name;
+    }
 
     void IntroduceYourself(){                          
         std::cout << "Name " << Name <<std::endl;
