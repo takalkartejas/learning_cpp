@@ -1,5 +1,6 @@
 # learning_cpp
 #### This repository is for learning the object oriented part of cpp
+#### Most of the explaination is given inside of the programs comments themselves
 
 ### Theory:
 * Errors- compile time – run time error
@@ -14,7 +15,8 @@
 * Std::string, a data type from <iostream> library
 
 ### steps:
-1. Learning classes and objects
+1. Learning classes and objects- classes_objects.cpp
+2. Learning access modifiers and methods - access_modifiers.cpp
 
 
 
