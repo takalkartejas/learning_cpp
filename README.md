@@ -17,6 +17,8 @@
 ### steps:
 1. Learning classes and objects- classes_objects.cpp
 2. Learning access modifiers and methods - access_modifiers.cpp
+3. Learning constructors - constructors.cpp
+4. Learning encapsulation - encapsulation.cpp
 
 
 
