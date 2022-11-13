@@ -48,9 +48,14 @@ class Developer: Employee{          // developer is child and employee is parent
     public:
         string favProgramminLang;
    // line 4. and 5.
-   Developer(string name, string company, int age, string favlang):Employee(name,company,age){ // here we need not to add the previous added properties
-    favProgramminLang = favlang;
-   }   
+        Developer(string name, string company, int age, string favlang):Employee(name,company,age){ // here we need not to add the previous added properties
+            favProgramminLang = favlang;
+         }   
+
+         void FixBug(){                     //creating a method in child class
+            cout << Name << " fixed the bug using " << favProgramminLang << std::endl;
+         }
+
 
 };
 
@@ -58,5 +63,6 @@ int main()
 {
     int number; 
     Developer d = Developer("Tejas","ARAI",25,"python");
+    d.FixBug();
 
 }
